@@ -1,0 +1,26 @@
+# To Use the Twitter APIs, you need:
+# - to apply for a developer account
+# - to create an application to generate API keys and act as a gateway for the API calls
+# - a dev environment to isolate usage, rate limit rules, etc.  only required for premium API
+
+# twitter UI search
+# this will return more historical results, not necessarily the past week
+twitter_search_base_url = 'https://twitter.com/search?q='
+
+# twitter API search
+# this is the basic API and will return a sample of the most relevant tweets in the past week
+twitter_search_api_base_url = 'https://api.twitter.com/1.1/search/tweets.json?q='
+
+# search for a specific query
+search_query = 'cryptocurrency bitcoin btc'
+search_query = search_query.replace(' ', '%20')
+
+# authenticate the twurl client, perform a search
+twurl authorize --consumer-key <consumer_key> --consumer-secret <consumer_secret>
+twurl /1.1/search/tweets.json?q=bitcoin
+
+# Resources
+# A paper relating Twitter sentiment analysis and Google trends to stock price prediction
+https://scholar.smu.edu/cgi/viewcontent.cgi?article=1039&context=datasciencereview
+# A website that tracks the number of tweets per day for a cryptocurrency
+https://bitinfocharts.com/
